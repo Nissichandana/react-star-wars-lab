@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import StarShipCard from './components/StarShipCard.jsx'
-import Nav from './components/Nav'
+//import Nav from './components/Nav'
 
 function App() {
   // State to hold the ship data
@@ -20,7 +20,7 @@ function App() {
     }
   };
 
-  const shipList = ship.map((selection) => {return = {selection.name}})
+  const shipList = ship.map((selection) => {selection.name})
 
   // useEffect to run shipdata 
 
