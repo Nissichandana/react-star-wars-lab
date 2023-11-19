@@ -1,12 +1,13 @@
 import React from 'react'
 
-function StarShipCard() {
+function StarShipCard({oneship}) {
+  const shipname = oneship.name;
   return (
-    <div>
-        <h1>Create Ship</h1>
-
-    </div>
+    <div className='star'>{oneship.name}</div>
   )
 }
 
 export default StarShipCard   
+
+
+//<div className="ship">{starship.name}</div>
