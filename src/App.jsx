@@ -1,39 +1,27 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import StarShipCard from './components/StarShipCard.jsx'
-// import Nav from './components/Nav'
-
-function App() {
-  // State to hold the ship data
-  const [ship, setShip] = useState([]);
-
-  // function to fetch ship data
-  const shipData = async () => {
-    try {
-      const response = await fetch ("https://swapi.dev/api/starships/");
-      const data = await response.json();
-      setShip(data.results);
-    }catch (e){
-      console.error(e);
-    }
-  };
-
-  //const shipList = ship.map((selection) => {selection.name})
-
-  // useEffect to run shipdata 
-
+import React, { useState, useEffect } from 'react';
+const App = () => {
+  const [starships, setStarships] = useState([]);
   useEffect(() => {
-    shipData();
+    const fetchStarships = async () => {
+      try {
+        const response = await fetch('https://swapi.dev/api/starships/');
+        const data = await response.json();
+        setStarships(data.results);
+      } catch (error) {
+        console.error('Error fetching starships:', error);
+      }
+    };
+    fetchStarships();
   }, []);
-
   return (
-    <div style={{ color: "black"}}>
-      {ship ? ship.map((oneship) => oneship.name) : "loading..."}
+    <div>
+       <header style={{position:'fixed',top:'0',left:'0',right:'0', border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' , backgroundColor:'gray',textAlign:'center'}}><h1>Star Wars Starships</h1></header>
+      {starships.map((starship, index) => (
+        <div key={index} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
+          <h3>{starship.name}</h3>
+        </div>
+      ))}
     </div>
   );
-}
-
-
-export default App
+};
+export default App;

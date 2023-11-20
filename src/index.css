@@ -28,22 +28,14 @@ body {
   float: flex;
 }
 
-.star {
+.ship {
   width: 150px;
   height: 100px;
-  background-color: rgb(156, 149, 167);
-  color: #125528;
+  background-color: rgb(42, 0, 100);
+  color: #FFFFFF;
   float: left;
   margin: 20px;
   text-align: center;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-  border: 1px;
-  border-color: rgb(110, 12, 12);
-
-
 }
-
 
 
